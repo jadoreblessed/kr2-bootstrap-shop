@@ -1,3 +1,172 @@
+:root {
+  --room-green: #245b43;
+  --room-green-dark: #194632;
+  --room-cream: #f3f1e9;
+  --room-line: #e1e5dc;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
+  color: #202923;
+  background: #fff;
+}
+
+.site-header {
+  background: #fff;
+}
+
+.brand {
+  color: var(--room-green);
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.07em;
+}
+
+.brand span {
+  color: #a5bb80;
+}
+
+.nav-link {
+  font-weight: 500;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: var(--room-green) !important;
+}
+
+.btn-room {
+  color: #fff;
+  background: var(--room-green);
+  border-color: var(--room-green);
+}
+
+.btn-room:hover,
+.btn-room:focus {
+  color: #fff;
+  background: var(--room-green-dark);
+  border-color: var(--room-green-dark);
+}
+
+.eyebrow {
+  color: var(--room-green);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.hero,
+.section-soft {
+  background: var(--room-cream);
+}
+
+.hero-image-wrap {
+  position: relative;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 1.5rem;
+}
+
+.hero-note {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  max-width: 220px;
+  padding: 0.8rem 1rem;
+  border-radius: 0.8rem;
+  background: #fff;
+  color: var(--room-green);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.feature-card,
+.filter-panel,
+.care-panel {
+  border: 1px solid var(--room-line);
+  border-radius: 1rem;
+  background: #fafbf8;
+}
+
+.feature-number {
+  color: var(--room-green);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.plant-card,
+.form-card {
+  overflow: hidden;
+  border: 1px solid var(--room-line);
+  border-radius: 1rem;
+  box-shadow: 0 8px 26px rgb(29 57 38 / 5%);
+}
+
+.plant-photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #e6eee5;
+}
+
+.room-badge {
+  color: var(--room-green-dark);
+  background: #e1edda;
+}
+
+.alert-room {
+  color: #204a36;
+  background: #eaf2e6;
+  border-color: #d0e3cb;
+}
+
+.product-image {
+  height: 480px;
+  object-fit: cover;
+  background: #e6eee5;
+}
+
+.quick-image {
+  height: 220px;
+  object-fit: cover;
+  background: #e6eee5;
+}
+
+.site-footer {
+  background: #172a20;
+}
+
+.footer-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  color: #c7dfbb;
+}
+
+:focus-visible {
+  outline: 3px solid #96b873;
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .hero-image,
+  .product-image {
+    height: 320px;
+  }
+
+  .hero-note {
+    max-width: 180px;
+    font-size: 0.8rem;
+  }
 }
