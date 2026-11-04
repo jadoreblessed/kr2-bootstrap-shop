@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Описание и условия ухода за комнатным растением ROOM.">
+  <title>Растение — ROOM</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <header class="site-header border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html">ROOM<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainMenu" aria-controls="mainMenu"
+          aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <div class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link" href="catalog.html">Каталог</a>
+            <a class="nav-link active" aria-current="page" href="product.html?plant=monstera">Растение</a>
+            <a class="btn btn-room ms-lg-2" href="order.html">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-5">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item"><a href="catalog.html">Каталог</a></li>
+        <li class="breadcrumb-item active" id="productCrumb" aria-current="page">Монстера</li>
+      </ol>
+    </nav>
+
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-lg-6">
+        <img id="productImage" class="product-image rounded-4 w-100" data-fallback
+          src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1000&q=85"
+          alt="Зелёное комнатное растение">
+      </div>
+      <div class="col-12 col-lg-6">
+        <span id="productBadge" class="badge room-badge mb-3">Популярное</span>
+        <h1 id="productName" class="display-5 fw-semibold mb-3">Монстера</h1>
+        <p id="productDescription" class="lead text-secondary">
+          Крупное растение с выразительными резными листьями.
+        </p>
+        <p id="productPrice" class="display-6 fw-semibold my-4">2 490 ₽</p>
+        <div class="d-flex flex-wrap gap-2 mb-4">
+          <a id="productOrder" class="btn btn-room btn-lg"
+            href="order.html?plant=monstera">Оставить заявку</a>
+          <a class="btn btn-outline-dark btn-lg" href="catalog.html">Назад в каталог</a>
+        </div>
+        <div class="alert alert-room mb-0" role="alert">
+          Условия освещения и полива указаны ниже — проверьте их перед выбором.
+        </div>
+      </div>
+    </div>
+
+    <section class="row g-5 py-5 my-lg-3">
+      <div class="col-12 col-lg-7">
+        <span class="eyebrow">О РАСТЕНИИ</span>
+        <h2 class="h3 mt-2 mb-3">Условия содержания</h2>
+        <div class="table-responsive">
+          <table class="table table-striped align-middle">
+            <caption class="visually-hidden">Характеристики выбранного растения</caption>
+            <tbody>
+              <tr><th scope="row">Освещение</th><td id="productLight">Яркий рассеянный свет</td></tr>
+              <tr><th scope="row">Полив</th><td id="productWater">После подсыхания верхнего слоя грунта</td></tr>
+              <tr><th scope="row">Высота</th><td id="productHeight">До 80 см</td></tr>
+              <tr><th scope="row">Сложность ухода</th><td id="productCare">Умеренная</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5">
+        <div class="care-panel p-4 h-100">
+          <span class="eyebrow">СОВЕТ ROOM</span>
+          <h2 class="h4 mt-2">Перед покупкой</h2>
+          <p class="text-secondary mb-0">
+            Определите, сколько света получает выбранное место.
+            Учитывайте, что потребность в поливе меняется
+            в зависимости от температуры и сезона.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pb-5" aria-labelledby="faqTitle">
+      <h2 id="faqTitle" class="h3 mb-4">Частые вопросы</h2>
+      <div class="accordion" id="careFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">
+              Как понять, что пора поливать растение?
+            </button>
+          </h3>
+          <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#careFaq">
+            <div class="accordion-body">
+              Проверьте грунт пальцем на небольшой глубине. Ориентируйтесь
+              на состояние грунта, а не только на календарь.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">
+              Что означает рассеянный свет?
+            </button>
+          </h3>
+          <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#careFaq">
+            <div class="accordion-body">
+              Это светлое место без длительного воздействия прямых
+              полуденных солнечных лучей.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+              Можно ли выбрать растение без регистрации?
+            </button>
+          </h3>
+          <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#careFaq">
+            <div class="accordion-body">
+              Да. В учебном проекте можно открыть каталог и заполнить
+              демонстрационную форму без регистрации.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer py-4">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-12 col-md-6">
+          <a class="brand text-white text-decoration-none" href="index.html">ROOM<span>.</span></a>
+          <p class="text-white-50 small mb-0 mt-1">Растения для вашего пространства.</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="footer-link me-3" href="catalog.html">Каталог</a>
+          <a class="footer-link" href="order.html">Заявка</a>
+          <p class="text-white-50 small mb-0 mt-2">© 2026 ROOM · Учебный проект</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

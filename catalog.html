@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Каталог комнатных растений ROOM.">
+  <title>Каталог растений — ROOM</title>
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+  <header class="site-header border-bottom">
+    <nav class="navbar navbar-expand-lg" aria-label="Основная навигация">
+      <div class="container">
+        <a class="navbar-brand brand" href="index.html">ROOM<span>.</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#mainMenu" aria-controls="mainMenu"
+          aria-expanded="false" aria-label="Открыть меню">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <div class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <a class="nav-link" href="index.html">Главная</a>
+            <a class="nav-link active" aria-current="page" href="catalog.html">Каталог</a>
+            <a class="nav-link" href="product.html?plant=monstera">Растение</a>
+            <a class="btn btn-room ms-lg-2" href="order.html">Оставить заявку</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container py-5">
+    <nav aria-label="Хлебные крошки">
+      <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Каталог</li>
+      </ol>
+    </nav>
+
+    <div class="row align-items-end g-3 mb-4">
+      <div class="col-12 col-lg-8">
+        <span class="eyebrow">КАТАЛОГ ROOM</span>
+        <h1 class="display-5 fw-semibold mt-2 mb-2">Найдите своё растение</h1>
+        <p class="text-secondary mb-0">
+          Выберите освещение и сложность ухода — каталог покажет подходящие варианты.
+        </p>
+      </div>
+      <div class="col-12 col-lg-4 text-lg-end">
+        <a class="btn btn-outline-dark" href="order.html">Перейти к заявке</a>
+      </div>
+    </div>
+
+    <div class="alert alert-room mb-4" role="alert">
+      Нажмите «Быстрый просмотр», чтобы узнать об уходе, или откройте подробную карточку.
+    </div>
+
+    <form id="catalogFilters" class="filter-panel p-3 p-md-4 mb-4" role="search">
+      <div class="row g-3 align-items-end">
+        <div class="col-12 col-md-4">
+          <label for="searchPlant" class="form-label">Поиск по названию</label>
+          <input id="searchPlant" type="search" class="form-control" placeholder="Например, монстера">
+        </div>
+        <div class="col-12 col-md-3">
+          <label for="lightFilter" class="form-label">Освещение</label>
+          <select id="lightFilter" class="form-select">
+            <option value="">Любое</option>
+            <option value="bright">Яркий рассеянный свет</option>
+            <option value="indirect">Умеренный свет</option>
+            <option value="shade">Полутень</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-3">
+          <label for="careFilter" class="form-label">Уход</label>
+          <select id="careFilter" class="form-select">
+            <option value="">Любой</option>
+            <option value="easy">Простой</option>
+            <option value="medium">Умеренный</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-2">
+          <button class="btn btn-outline-dark w-100" type="reset">Сбросить</button>
+        </div>
+      </div>
+    </form>
+
+    <p id="catalogCount" class="small text-secondary mb-3" aria-live="polite">Показано растений: 9</p>
+    <div id="emptyState" class="alert alert-warning d-none" role="status">
+      По этим условиям ничего не найдено. Попробуйте изменить фильтры.
+    </div>
+
+    <div class="row g-4" id="catalogGrid">
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="монстера" data-light="bright" data-care="medium">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=800&q=85"
+            alt="Зелёное комнатное растение">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Популярное</span>
+            <h2 class="h5 card-title">Монстера</h2>
+            <p class="card-text text-secondary">Крупные резные листья. Любит рассеянный свет.</p>
+            <strong class="fs-5 mt-auto mb-3">2 490 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=monstera">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="monstera"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="замиокулькас" data-light="shade" data-care="easy">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=800&q=85"
+            alt="Комнатное растение в горшке">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Простой уход</span>
+            <h2 class="h5 card-title">Замиокулькас</h2>
+            <p class="card-text text-secondary">Выдерживает полутень и редкий полив.</p>
+            <strong class="fs-5 mt-auto mb-3">1 890 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=zamioculcas">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="zamioculcas"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="фикус" data-light="bright" data-care="medium">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=800&q=85"
+            alt="Зелёное растение в интерьере">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Для гостиной</span>
+            <h2 class="h5 card-title">Фикус</h2>
+            <p class="card-text text-secondary">Выразительная зелень для светлой комнаты.</p>
+            <strong class="fs-5 mt-auto mb-3">3 290 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=ficus">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="ficus"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="пилея" data-light="indirect" data-care="easy">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1459156212016-c812468e2115?w=800&q=85"
+            alt="Небольшое зелёное растение">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Компактное</span>
+            <h2 class="h5 card-title">Пилея</h2>
+            <p class="card-text text-secondary">Небольшой акцент для стола или полки.</p>
+            <strong class="fs-5 mt-auto mb-3">1 290 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=pilea">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="pilea"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="сансевиерия" data-light="shade" data-care="easy">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1463320726281-696a485928c7?w=800&q=85"
+            alt="Зелёные комнатные растения">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Для начинающих</span>
+            <h2 class="h5 card-title">Сансевиерия</h2>
+            <p class="card-text text-secondary">Стойкое растение для разных комнат.</p>
+            <strong class="fs-5 mt-auto mb-3">1 590 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=sansevieria">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="sansevieria"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="спатифиллум" data-light="indirect" data-care="medium">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1525498128493-380d1990a112?w=800&q=85"
+            alt="Комнатное растение на светлом фоне">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Для спальни</span>
+            <h2 class="h5 card-title">Спатифиллум</h2>
+            <p class="card-text text-secondary">Тёмная листва и светлые цветы.</p>
+            <strong class="fs-5 mt-auto mb-3">1 790 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=spathiphyllum">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="spathiphyllum"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="калатея" data-light="indirect" data-care="medium">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1545241047-6083a3684587?w=800&q=85"
+            alt="Растение с декоративной листвой">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Узорная листва</span>
+            <h2 class="h5 card-title">Калатея</h2>
+            <p class="card-text text-secondary">Листья с заметным природным рисунком.</p>
+            <strong class="fs-5 mt-auto mb-3">2 190 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=calathea">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="calathea"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="алоэ" data-light="bright" data-care="easy">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=800&q=85"
+            alt="Зелёное растение на светлом фоне">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Солнечное место</span>
+            <h2 class="h5 card-title">Алоэ</h2>
+            <p class="card-text text-secondary">Компактное растение для светлого подоконника.</p>
+            <strong class="fs-5 mt-auto mb-3">990 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=aloe">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="aloe"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 plant-item"
+        data-name="филодендрон" data-light="indirect" data-care="easy">
+        <article class="card plant-card h-100">
+          <img class="card-img-top plant-photo" data-fallback
+            src="https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?w=800&q=85"
+            alt="Листья комнатного растения">
+          <div class="card-body d-flex flex-column p-4">
+            <span class="badge room-badge align-self-start mb-3">Зелёный акцент</span>
+            <h2 class="h5 card-title">Филодендрон</h2>
+            <p class="card-text text-secondary">Пышная листва и несложный уход.</p>
+            <strong class="fs-5 mt-auto mb-3">2 090 ₽</strong>
+            <div class="d-flex flex-wrap gap-2">
+              <a class="btn btn-room" href="product.html?plant=philodendron">Подробнее</a>
+              <button class="btn btn-outline-dark" type="button" data-quick="philodendron"
+                data-bs-toggle="modal" data-bs-target="#quickModal">Быстрый просмотр</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer py-4">
+    <div class="container">
+      <div class="row align-items-center g-3">
+        <div class="col-12 col-md-6">
+          <a class="brand text-white text-decoration-none" href="index.html">ROOM<span>.</span></a>
+          <p class="text-white-50 small mb-0 mt-1">Растения для вашего пространства.</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <a class="footer-link me-3" href="index.html">Главная</a>
+          <a class="footer-link" href="order.html">Заявка</a>
+          <p class="text-white-50 small mb-0 mt-2">© 2026 ROOM · Учебный проект</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal fade" id="quickModal" tabindex="-1"
+    aria-labelledby="quickModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title h5" id="quickModalTitle">Растение</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"
+            aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+          <img id="quickImage" class="w-100 rounded-3 quick-image mb-3"
+            src="images/plant.svg" alt="Иллюстрация растения" data-fallback>
+          <p id="quickDescription" class="text-secondary mb-2"></p>
+          <p id="quickCare" class="small mb-2"></p>
+          <strong id="quickPrice" class="fs-5"></strong>
+        </div>
+        <div class="modal-footer">
+          <a id="quickDetails" class="btn btn-outline-dark" href="product.html">Подробнее</a>
+          <a id="quickOrder" class="btn btn-room" href="order.html">Оставить заявку</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
