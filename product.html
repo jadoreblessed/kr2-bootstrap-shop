@@ -6,7 +6,7 @@
   <meta name="description" content="Описание и условия ухода за комнатным растением ROOM.">
   <title>Растение — ROOM</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=2">
+  <link rel="stylesheet" href="css/custom.css?v=3">
 </head>
 <body>
   <header class="site-header border-bottom">
@@ -42,6 +42,7 @@
         <img id="productImage" class="product-image rounded-4 w-100" data-fallback
           src="images/photos/monstera.jpg"
           alt="Зелёное комнатное растение">
+        <div id="productThumbnails" class="product-thumbnails d-flex gap-3 mt-3" role="group" aria-label="Фотографии растения"></div>
       </div>
       <div class="col-12 col-lg-6">
         <span id="productBadge" class="badge room-badge mb-3">Популярное</span>
@@ -72,6 +73,7 @@
               <tr><th scope="row">Освещение</th><td id="productLight">Яркий рассеянный свет</td></tr>
               <tr><th scope="row">Полив</th><td id="productWater">После подсыхания верхнего слоя грунта</td></tr>
               <tr><th scope="row">Высота</th><td id="productHeight">До 80 см</td></tr>
+              <tr><th scope="row">Диаметр горшка</th><td id="productPot">Ø 17 см</td></tr>
               <tr><th scope="row">Сложность ухода</th><td id="productCare">Умеренная</td></tr>
             </tbody>
           </table>
@@ -90,7 +92,6 @@
       </div>
     </section>
 
-    <section class="row g-3 pb-5" aria-label="Идеи размещения растений"><div class="col-md-4"><img class="detail-photo" src="images/photos/shelf.jpg" alt="Растения у окна и на полках" loading="lazy"></div><div class="col-md-4"><img class="detail-photo" src="images/photos/leaves.jpg" alt="Крупные резные зелёные листья" loading="lazy"></div><div class="col-md-4"><a class="detail-link" href="care.html"><img class="detail-photo" src="images/photos/window.jpg" alt="Комнатные растения в светлом интерьере" loading="lazy"><span>Подробнее об уходе →</span></a></div></section>
     <section class="pb-5" aria-labelledby="faqTitle">
       <h2 id="faqTitle" class="h3 mb-4">Частые вопросы</h2>
       <div class="accordion" id="careFaq">
@@ -137,25 +138,38 @@
         </div>
       </div>
     </section>
+
+    <section class="pb-5" aria-labelledby="relatedTitle">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+        <div><span class="eyebrow">ПОДХОЖИЕ ВАРИАНТЫ</span><h2 id="relatedTitle" class="h3 mt-2 mb-0">Похожие растения</h2></div>
+        <a class="text-link" href="catalog.html">Весь каталог →</a>
+      </div>
+      <div id="relatedGrid" class="row g-4"></div>
+    </section>
   </main>
 
   <footer class="site-footer py-5">
     <div class="container">
       <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-4">
           <a class="brand text-white text-decoration-none" href="index.html">ROOM<span>.</span></a>
           <p class="text-white-50 small mt-3 mb-0">© 2026 ROOM. Все права защищены.</p>
         </div>
-        <nav class="col-12 col-lg-6 d-flex flex-wrap gap-3 gap-md-4 justify-content-lg-end" aria-label="Ссылки в футере">
+        <nav class="col-12 col-lg-4 d-flex flex-wrap gap-3 justify-content-lg-center" aria-label="Ссылки в футере">
           <a class="footer-link" href="catalog.html">Каталог</a>
           <a class="footer-link" href="care.html">Уход</a>
           <a class="footer-link" href="about.html">О ROOM</a>
         </nav>
+        <div class="col-12 col-lg-4 text-lg-end">
+          <p class="text-white fw-semibold mb-2">Связь</p>
+          <a class="footer-link d-block mb-1" href="mailto:hello@roomplants.example">hello@roomplants.example</a>
+          <span class="text-white-50 d-block">+7 (000) 000-00-00</span>
+        </div>
       </div>
     </div>
   </footer>
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=2"></script>
 </body>
 </html>

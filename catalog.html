@@ -6,7 +6,7 @@
   <meta name="description" content="Каталог комнатных растений ROOM.">
   <title>Каталог растений — ROOM</title>
   <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/custom.css?v=2">
+  <link rel="stylesheet" href="css/custom.css?v=3">
 </head>
 <body>
   <header class="site-header border-bottom">
@@ -55,11 +55,11 @@
 
     <form id="catalogFilters" class="filter-panel p-3 p-md-4 mb-4" role="search">
       <div class="row g-3 align-items-end">
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6 col-lg-3">
           <label for="searchPlant" class="form-label">Поиск по названию</label>
           <input id="searchPlant" type="search" class="form-control" placeholder="Например, монстера">
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-6 col-lg-2">
           <label for="lightFilter" class="form-label">Освещение</label>
           <select id="lightFilter" class="form-select">
             <option value="">Любое</option>
@@ -68,7 +68,7 @@
             <option value="shade">Полутень</option>
           </select>
         </div>
-        <div class="col-12 col-md-3">
+        <div class="col-12 col-md-6 col-lg-2">
           <label for="careFilter" class="form-label">Уход</label>
           <select id="careFilter" class="form-select">
             <option value="">Любой</option>
@@ -76,7 +76,15 @@
             <option value="medium">Умеренный</option>
           </select>
         </div>
-        <div class="col-12 col-md-2">
+        <div class="col-12 col-md-6 col-lg-3">
+          <label for="sortFilter" class="form-label">Сортировка</label>
+          <select id="sortFilter" class="form-select">
+            <option value="default">По умолчанию</option>
+            <option value="price-asc">Сначала дешевле</option>
+            <option value="price-desc">Сначала дороже</option>
+          </select>
+        </div>
+        <div class="col-12 col-lg-2">
           <button class="btn btn-outline-dark w-100" type="reset">Сбросить</button>
         </div>
       </div>
@@ -89,16 +97,17 @@
 
     <div class="row g-4" id="catalogGrid">
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="монстера" data-light="bright" data-care="medium">
+        data-name="монстера" data-light="bright" data-care="medium" data-price="2490">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/monstera.jpg"
-            alt="Зелёное комнатное растение">
+            alt="Фото растения: Монстера">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Популярное</span>
             <h2 class="h5 card-title">Монстера</h2>
             <p class="card-text text-secondary">Крупные резные листья. Любит рассеянный свет.</p>
-            <strong class="fs-5 mt-auto mb-3">2 490 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 80 см</span><span>Горшок Ø 17 см</span></div>
+            <strong class="fs-5 mb-3">2 490 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=monstera">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="monstera"
@@ -109,16 +118,17 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="замиокулькас" data-light="shade" data-care="easy">
+        data-name="замиокулькас" data-light="shade" data-care="easy" data-price="1890">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/zamioculcas.jpg"
-            alt="Комнатное растение в горшке">
+            alt="Фото растения: Замиокулькас">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Простой уход</span>
             <h2 class="h5 card-title">Замиокулькас</h2>
             <p class="card-text text-secondary">Выдерживает полутень и редкий полив.</p>
-            <strong class="fs-5 mt-auto mb-3">1 890 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 70 см</span><span>Горшок Ø 14 см</span></div>
+            <strong class="fs-5 mb-3">1 890 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=zamioculcas">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="zamioculcas"
@@ -129,16 +139,17 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="фикус" data-light="bright" data-care="medium">
+        data-name="фикус" data-light="bright" data-care="medium" data-price="3290">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/ficus.jpg"
-            alt="Зелёное растение в интерьере">
+            alt="Фото растения: Фикус">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Для гостиной</span>
             <h2 class="h5 card-title">Фикус</h2>
             <p class="card-text text-secondary">Выразительная зелень для светлой комнаты.</p>
-            <strong class="fs-5 mt-auto mb-3">3 290 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 100 см</span><span>Горшок Ø 21 см</span></div>
+            <strong class="fs-5 mb-3">3 290 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=ficus">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="ficus"
@@ -149,16 +160,17 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="пилея" data-light="indirect" data-care="easy">
+        data-name="пилея" data-light="indirect" data-care="easy" data-price="1290">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/pilea.jpg"
-            alt="Небольшое зелёное растение">
+            alt="Фото растения: Пилея">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Компактное</span>
             <h2 class="h5 card-title">Пилея</h2>
             <p class="card-text text-secondary">Небольшой акцент для стола или полки.</p>
-            <strong class="fs-5 mt-auto mb-3">1 290 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 30 см</span><span>Горшок Ø 12 см</span></div>
+            <strong class="fs-5 mb-3">1 290 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=pilea">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="pilea"
@@ -169,16 +181,17 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="сансевиерия" data-light="shade" data-care="easy">
+        data-name="сансевиерия" data-light="shade" data-care="easy" data-price="1590">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/sansevieria.jpg"
-            alt="Зелёные комнатные растения">
+            alt="Фото растения: Сансевиерия">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Для начинающих</span>
             <h2 class="h5 card-title">Сансевиерия</h2>
             <p class="card-text text-secondary">Стойкое растение для разных комнат.</p>
-            <strong class="fs-5 mt-auto mb-3">1 590 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 60 см</span><span>Горшок Ø 14 см</span></div>
+            <strong class="fs-5 mb-3">1 590 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=sansevieria">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="sansevieria"
@@ -189,16 +202,17 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="спатифиллум" data-light="indirect" data-care="medium">
+        data-name="спатифиллум" data-light="indirect" data-care="medium" data-price="1790">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/spathiphyllum.jpg"
-            alt="Комнатное растение на светлом фоне">
+            alt="Фото растения: Спатифиллум">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Для спальни</span>
             <h2 class="h5 card-title">Спатифиллум</h2>
             <p class="card-text text-secondary">Тёмная листва и светлые цветы.</p>
-            <strong class="fs-5 mt-auto mb-3">1 790 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 50 см</span><span>Горшок Ø 14 см</span></div>
+            <strong class="fs-5 mb-3">1 790 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=spathiphyllum">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="spathiphyllum"
@@ -209,16 +223,17 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="калатея" data-light="indirect" data-care="medium">
+        data-name="калатея" data-light="indirect" data-care="medium" data-price="2190">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/calathea.jpg"
-            alt="Растение с декоративной листвой">
+            alt="Фото растения: Калатея">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Узорная листва</span>
             <h2 class="h5 card-title">Калатея</h2>
             <p class="card-text text-secondary">Листья с заметным природным рисунком.</p>
-            <strong class="fs-5 mt-auto mb-3">2 190 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 50 см</span><span>Горшок Ø 14 см</span></div>
+            <strong class="fs-5 mb-3">2 190 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=calathea">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="calathea"
@@ -229,16 +244,17 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="алоэ" data-light="bright" data-care="easy">
+        data-name="алоэ" data-light="bright" data-care="easy" data-price="990">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/aloe.jpg"
-            alt="Зелёное растение на светлом фоне">
+            alt="Фото растения: Алоэ">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Солнечное место</span>
             <h2 class="h5 card-title">Алоэ</h2>
             <p class="card-text text-secondary">Компактное растение для светлого подоконника.</p>
-            <strong class="fs-5 mt-auto mb-3">990 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 35 см</span><span>Горшок Ø 12 см</span></div>
+            <strong class="fs-5 mb-3">990 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=aloe">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="aloe"
@@ -249,16 +265,17 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 plant-item"
-        data-name="филодендрон" data-light="indirect" data-care="easy">
+        data-name="филодендрон" data-light="indirect" data-care="easy" data-price="2090">
         <article class="card plant-card h-100">
           <img class="card-img-top plant-photo" data-fallback
             src="images/photos/philodendron.jpg"
-            alt="Листья комнатного растения">
+            alt="Фото растения: Филодендрон">
           <div class="card-body d-flex flex-column p-4">
             <span class="badge room-badge align-self-start mb-3">Зелёный акцент</span>
             <h2 class="h5 card-title">Филодендрон</h2>
             <p class="card-text text-secondary">Пышная листва и несложный уход.</p>
-            <strong class="fs-5 mt-auto mb-3">2 090 ₽</strong>
+            <div class="plant-meta d-flex flex-wrap gap-2 mt-auto mb-2"><span>Высота до 70 см</span><span>Горшок Ø 17 см</span></div>
+            <strong class="fs-5 mb-3">2 090 ₽</strong>
             <div class="d-flex flex-wrap gap-2">
               <a class="btn btn-room" href="product.html?plant=philodendron">Подробнее</a>
               <button class="btn btn-outline-dark" type="button" data-quick="philodendron"
@@ -274,15 +291,20 @@
   <footer class="site-footer py-5">
     <div class="container">
       <div class="row align-items-center g-4">
-        <div class="col-12 col-lg-6">
+        <div class="col-12 col-lg-4">
           <a class="brand text-white text-decoration-none" href="index.html">ROOM<span>.</span></a>
           <p class="text-white-50 small mt-3 mb-0">© 2026 ROOM. Все права защищены.</p>
         </div>
-        <nav class="col-12 col-lg-6 d-flex flex-wrap gap-3 gap-md-4 justify-content-lg-end" aria-label="Ссылки в футере">
+        <nav class="col-12 col-lg-4 d-flex flex-wrap gap-3 justify-content-lg-center" aria-label="Ссылки в футере">
           <a class="footer-link" href="catalog.html">Каталог</a>
           <a class="footer-link" href="care.html">Уход</a>
           <a class="footer-link" href="about.html">О ROOM</a>
         </nav>
+        <div class="col-12 col-lg-4 text-lg-end">
+          <p class="text-white fw-semibold mb-2">Связь</p>
+          <a class="footer-link d-block mb-1" href="mailto:hello@roomplants.example">hello@roomplants.example</a>
+          <span class="text-white-50 d-block">+7 (000) 000-00-00</span>
+        </div>
       </div>
     </div>
   </footer>
@@ -312,6 +334,6 @@
   </div>
 
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/app.js?v=2"></script>
 </body>
 </html>

@@ -7,8 +7,10 @@ const plants = {
     light: "Яркий рассеянный свет",
     water: "После подсыхания верхнего слоя грунта",
     height: "До 80 см",
+    pot: "Ø 17 см",
     care: "Умеренная",
-    image: "images/photos/monstera.jpg"
+    image: "images/photos/monstera.jpg",
+    detailImage: "images/photos/leaves.jpg"
   },
   zamioculcas: {
     name: "Замиокулькас",
@@ -18,8 +20,10 @@ const plants = {
     light: "Полутень или умеренный свет",
     water: "После заметного просыхания грунта",
     height: "До 70 см",
+    pot: "Ø 14 см",
     care: "Простая",
-    image: "images/photos/zamioculcas.jpg"
+    image: "images/photos/zamioculcas.jpg",
+    detailImage: "images/photos/zamioculcas-detail.jpg"
   },
   ficus: {
     name: "Фикус",
@@ -29,8 +33,10 @@ const plants = {
     light: "Яркий рассеянный свет",
     water: "Когда подсохнет верхний слой грунта",
     height: "До 100 см",
+    pot: "Ø 21 см",
     care: "Умеренная",
-    image: "images/photos/ficus.jpg"
+    image: "images/photos/ficus.jpg",
+    detailImage: "images/photos/ficus-detail.jpg"
   },
   pilea: {
     name: "Пилея",
@@ -40,8 +46,10 @@ const plants = {
     light: "Умеренный рассеянный свет",
     water: "После лёгкого подсыхания грунта",
     height: "До 30 см",
+    pot: "Ø 12 см",
     care: "Простая",
-    image: "images/photos/pilea.jpg"
+    image: "images/photos/pilea.jpg",
+    detailImage: "images/photos/pilea-detail.jpg"
   },
   sansevieria: {
     name: "Сансевиерия",
@@ -51,8 +59,10 @@ const plants = {
     light: "Умеренный свет или полутень",
     water: "После полного просыхания грунта",
     height: "До 60 см",
+    pot: "Ø 14 см",
     care: "Простая",
-    image: "images/photos/sansevieria.jpg"
+    image: "images/photos/sansevieria.jpg",
+    detailImage: "images/photos/sansevieria-detail.jpg"
   },
   spathiphyllum: {
     name: "Спатифиллум",
@@ -62,8 +72,10 @@ const plants = {
     light: "Умеренный рассеянный свет",
     water: "Поддерживать грунт слегка влажным",
     height: "До 50 см",
+    pot: "Ø 14 см",
     care: "Умеренная",
-    image: "images/photos/spathiphyllum.jpg"
+    image: "images/photos/spathiphyllum.jpg",
+    detailImage: "images/photos/spathiphyllum-detail.jpg"
   },
   calathea: {
     name: "Калатея",
@@ -73,8 +85,10 @@ const plants = {
     light: "Умеренный рассеянный свет",
     water: "Не допускать полного пересыхания грунта",
     height: "До 50 см",
+    pot: "Ø 14 см",
     care: "Умеренная",
-    image: "images/photos/calathea.jpg"
+    image: "images/photos/calathea.jpg",
+    detailImage: "images/photos/calathea-detail.jpg"
   },
   aloe: {
     name: "Алоэ",
@@ -84,8 +98,10 @@ const plants = {
     light: "Яркий свет",
     water: "После полного просыхания грунта",
     height: "До 35 см",
+    pot: "Ø 12 см",
     care: "Простая",
-    image: "images/photos/aloe.jpg"
+    image: "images/photos/aloe.jpg",
+    detailImage: "images/photos/aloe-detail.jpg"
   },
   philodendron: {
     name: "Филодендрон",
@@ -95,8 +111,10 @@ const plants = {
     light: "Умеренный рассеянный свет",
     water: "После подсыхания верхнего слоя грунта",
     height: "До 70 см",
+    pot: "Ø 17 см",
     care: "Простая",
-    image: "images/photos/philodendron.jpg"
+    image: "images/photos/philodendron.jpg",
+    detailImage: "images/photos/philodendron-detail.jpg"
   }
 };
 
@@ -117,6 +135,8 @@ if (filters) {
   const search = document.querySelector("#searchPlant");
   const light = document.querySelector("#lightFilter");
   const care = document.querySelector("#careFilter");
+  const sort = document.querySelector("#sortFilter");
+  const grid = document.querySelector("#catalogGrid");
   const cards = [...document.querySelectorAll(".plant-item")];
   const count = document.querySelector("#catalogCount");
   const emptyState = document.querySelector("#emptyState");
@@ -124,6 +144,13 @@ if (filters) {
   function applyFilters() {
     const query = search.value.trim().toLocaleLowerCase("ru");
     let visible = 0;
+
+    const sorted = [...cards].sort((a, b) => {
+      if (sort.value === "price-asc") return Number(a.dataset.price) - Number(b.dataset.price);
+      if (sort.value === "price-desc") return Number(b.dataset.price) - Number(a.dataset.price);
+      return cards.indexOf(a) - cards.indexOf(b);
+    });
+    grid.append(...sorted);
 
     cards.forEach((card) => {
       const matches =
@@ -158,7 +185,7 @@ if (quickModal) {
     document.querySelector("#quickModalTitle").textContent = plant.name;
     document.querySelector("#quickDescription").textContent = plant.description;
     document.querySelector("#quickCare").textContent =
-      `Освещение: ${plant.light}. Уход: ${plant.care.toLowerCase()}.`;
+      `Освещение: ${plant.light}. Уход: ${plant.care.toLowerCase()}. Высота: ${plant.height.toLowerCase()}. Горшок: ${plant.pot}.`;
     document.querySelector("#quickPrice").textContent = plant.price;
 
     const image = document.querySelector("#quickImage");
@@ -187,12 +214,58 @@ if (productName) {
   document.querySelector("#productLight").textContent = plant.light;
   document.querySelector("#productWater").textContent = plant.water;
   document.querySelector("#productHeight").textContent = plant.height;
+  document.querySelector("#productPot").textContent = plant.pot;
   document.querySelector("#productCare").textContent = plant.care;
   document.querySelector("#productOrder").href = `order.html?plant=${selectedSlug}`;
 
   const image = document.querySelector("#productImage");
   image.src = plant.image;
   image.alt = `Фото растения: ${plant.name}`;
+
+  const thumbnails = document.querySelector("#productThumbnails");
+  [plant.image, plant.detailImage].forEach((src, index) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `product-thumb${index === 0 ? " active" : ""}`;
+    button.setAttribute("aria-label", `Показать фото ${index + 1}: ${plant.name}`);
+    button.setAttribute("aria-pressed", String(index === 0));
+
+    const thumbnail = document.createElement("img");
+    thumbnail.src = src;
+    thumbnail.alt = "";
+    button.append(thumbnail);
+    button.addEventListener("click", () => {
+      image.src = src;
+      image.alt = `${plant.name}: фото ${index + 1} из 2`;
+      thumbnails.querySelectorAll("button").forEach((item) => {
+        const active = item === button;
+        item.classList.toggle("active", active);
+        item.setAttribute("aria-pressed", String(active));
+      });
+    });
+    thumbnails.append(button);
+  });
+
+  const related = Object.entries(plants)
+    .filter(([key]) => key !== selectedSlug)
+    .sort(([, a], [, b]) =>
+      Number(b.light === plant.light) + Number(b.care === plant.care) -
+      Number(a.light === plant.light) - Number(a.care === plant.care))
+    .slice(0, 3);
+  document.querySelector("#relatedGrid").innerHTML = related.map(([key, item]) => `
+    <div class="col-12 col-md-6 col-lg-4">
+      <article class="card plant-card h-100">
+        <img class="card-img-top plant-photo" src="${item.image}" alt="${item.name}" loading="lazy">
+        <div class="card-body d-flex flex-column p-4">
+          <h3 class="h5 card-title">${item.name}</h3>
+          <p class="text-secondary small">${item.light} · ${item.height.toLowerCase()}</p>
+          <div class="d-flex justify-content-between align-items-center gap-2 mt-auto">
+            <strong>${item.price}</strong>
+            <a class="btn btn-outline-dark" href="product.html?plant=${key}">Подробнее</a>
+          </div>
+        </div>
+      </article>
+    </div>`).join("");
 }
 
 // Заявка: подставляем растение из ссылки и проверяем форму.
