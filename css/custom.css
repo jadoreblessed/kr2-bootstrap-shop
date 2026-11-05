@@ -170,3 +170,44 @@ body {
     font-size: 0.8rem;
   }
 }
+/* Editorial sections shared by the expanded ROOM pages. */
+.site-header { position: relative; z-index: 10; }
+.navbar { padding-block: .85rem; }
+.navbar-brand { flex-shrink: 0; }
+.nav-link { white-space: nowrap; }
+.btn { border-radius: .65rem; font-weight: 600; }
+.btn-room { padding-inline: 1.35rem; }
+.text-link { color: var(--room-green); font-weight: 700; text-decoration-thickness: 1px; text-underline-offset: .3em; }
+.text-link:hover { color: var(--room-green-dark); }
+.section-image { display: block; width: 100%; height: 360px; object-fit: cover; border-radius: 1.1rem; background: #e6eee5; }
+.page-hero-image { height: 460px; }
+.editorial-tile { position: relative; display: block; overflow: hidden; border-radius: 1.1rem; color: white; background: #314a38; }
+.editorial-tile img { width: 100%; height: 380px; object-fit: cover; display: block; transition: transform .3s ease; }
+.editorial-tile:hover img { transform: scale(1.035); }
+.editorial-tile::after { content: ""; position: absolute; inset: 40% 0 0; background: linear-gradient(transparent, rgba(12, 31, 21, .72)); pointer-events: none; }
+.editorial-tile span { position: absolute; z-index: 1; bottom: 1.5rem; left: 1.6rem; font-size: 1.8rem; font-weight: 700; }
+.editorial-tile small { display: block; font-size: .9rem; font-weight: 500; }
+.editorial-tile:hover { color: white; }
+.plant-card { transition: transform .2s ease, box-shadow .2s ease; }
+.plant-card:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgb(29 57 38 / 10%); }
+.plant-photo { height: 270px; }
+.detail-photo { width: 100%; height: 190px; object-fit: cover; border-radius: .85rem; }
+.detail-link { display: block; position: relative; color: white; }
+.detail-link span { position: absolute; bottom: .8rem; left: 1rem; padding: .4rem .7rem; border-radius: .5rem; background: var(--room-green); font-weight: 600; }
+.gallery-item { position: relative; margin: 0; overflow: hidden; border-radius: 1rem; background: var(--room-cream); }
+.gallery-item img { display: block; width: 100%; height: 340px; object-fit: cover; transition: transform .3s ease; }
+.gallery-item:hover img { transform: scale(1.025); }
+.gallery-item figcaption { padding: 1rem 1.2rem; font-weight: 700; }
+.gallery-item figcaption span { display: block; color: #64716a; font-size: .9rem; font-weight: 400; }
+.footer-link { line-height: 1.6; }
+@media (max-width: 1199.98px) {
+  .navbar-nav { padding-block: 1rem; }
+  .navbar-nav .btn { align-self: flex-start; margin-top: .6rem; }
+}
+@media (max-width: 767.98px) {
+  .section-image, .page-hero-image { height: 290px; }
+  .editorial-tile img { height: 300px; }
+  .gallery-item img { height: 280px; }
+  .detail-photo { height: 155px; }
+  .plant-photo { height: 245px; }
+}

@@ -8,7 +8,7 @@ const plants = {
     water: "После подсыхания верхнего слоя грунта",
     height: "До 80 см",
     care: "Умеренная",
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1000&q=85"
+    image: "images/photos/monstera.jpg"
   },
   zamioculcas: {
     name: "Замиокулькас",
@@ -19,7 +19,7 @@ const plants = {
     water: "После заметного просыхания грунта",
     height: "До 70 см",
     care: "Простая",
-    image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=1000&q=85"
+    image: "images/photos/zamioculcas.jpg"
   },
   ficus: {
     name: "Фикус",
@@ -30,7 +30,7 @@ const plants = {
     water: "Когда подсохнет верхний слой грунта",
     height: "До 100 см",
     care: "Умеренная",
-    image: "https://images.unsplash.com/photo-1497250681960-ef046c08a56e?w=1000&q=85"
+    image: "images/photos/ficus.jpg"
   },
   pilea: {
     name: "Пилея",
@@ -41,7 +41,7 @@ const plants = {
     water: "После лёгкого подсыхания грунта",
     height: "До 30 см",
     care: "Простая",
-    image: "https://images.unsplash.com/photo-1459156212016-c812468e2115?w=1000&q=85"
+    image: "images/photos/pilea.jpg"
   },
   sansevieria: {
     name: "Сансевиерия",
@@ -52,7 +52,7 @@ const plants = {
     water: "После полного просыхания грунта",
     height: "До 60 см",
     care: "Простая",
-    image: "https://images.unsplash.com/photo-1463320726281-696a485928c7?w=1000&q=85"
+    image: "images/photos/sansevieria.jpg"
   },
   spathiphyllum: {
     name: "Спатифиллум",
@@ -63,7 +63,7 @@ const plants = {
     water: "Поддерживать грунт слегка влажным",
     height: "До 50 см",
     care: "Умеренная",
-    image: "https://images.unsplash.com/photo-1525498128493-380d1990a112?w=1000&q=85"
+    image: "images/photos/spathiphyllum.jpg"
   },
   calathea: {
     name: "Калатея",
@@ -74,7 +74,7 @@ const plants = {
     water: "Не допускать полного пересыхания грунта",
     height: "До 50 см",
     care: "Умеренная",
-    image: "https://images.unsplash.com/photo-1545241047-6083a3684587?w=1000&q=85"
+    image: "images/photos/calathea.jpg"
   },
   aloe: {
     name: "Алоэ",
@@ -85,7 +85,7 @@ const plants = {
     water: "После полного просыхания грунта",
     height: "До 35 см",
     care: "Простая",
-    image: "https://images.unsplash.com/photo-1509423350716-97f9360b4e09?w=1000&q=85"
+    image: "images/photos/aloe.jpg"
   },
   philodendron: {
     name: "Филодендрон",
@@ -96,7 +96,7 @@ const plants = {
     water: "После подсыхания верхнего слоя грунта",
     height: "До 70 см",
     care: "Простая",
-    image: "https://images.unsplash.com/photo-1520412099551-62b6bafeb5bb?w=1000&q=85"
+    image: "images/photos/philodendron.jpg"
   }
 };
 
@@ -163,7 +163,7 @@ if (quickModal) {
 
     const image = document.querySelector("#quickImage");
     image.src = plant.image;
-    image.alt = `Иллюстрация растения: ${plant.name}`;
+    image.alt = `Фото растения: ${plant.name}`;
 
     document.querySelector("#quickDetails").href = `product.html?plant=${slug}`;
     document.querySelector("#quickOrder").href = `order.html?plant=${slug}`;
@@ -192,7 +192,7 @@ if (productName) {
 
   const image = document.querySelector("#productImage");
   image.src = plant.image;
-  image.alt = `Иллюстрация растения: ${plant.name}`;
+  image.alt = `Фото растения: ${plant.name}`;
 }
 
 // Заявка: подставляем растение из ссылки и проверяем форму.
@@ -218,7 +218,7 @@ if (orderForm) {
     const plant = plants[plantSelect.value];
     result.textContent =
       `Форма для растения «${plant.name}» заполнена корректно. ` +
-      "Это демонстрационный проект: данные не отправлены.";
+      "Это предварительный просмотр: данные никуда не отправлены.";
     result.classList.remove("d-none");
     result.scrollIntoView({ behavior: "smooth", block: "center" });
   });
