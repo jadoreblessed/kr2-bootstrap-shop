@@ -141,6 +141,9 @@ if (filters) {
   const count = document.querySelector("#catalogCount");
   const emptyState = document.querySelector("#emptyState");
 
+  const requestedLight = new URLSearchParams(window.location.search).get("light");
+  if (["bright", "medium", "shade"].includes(requestedLight)) light.value = requestedLight;
+
   function applyFilters() {
     const query = search.value.trim().toLocaleLowerCase("ru");
     let visible = 0;
@@ -170,6 +173,7 @@ if (filters) {
   filters.addEventListener("change", applyFilters);
   filters.addEventListener("reset", () => setTimeout(applyFilters, 0));
   filters.addEventListener("submit", (event) => event.preventDefault());
+  applyFilters();
 }
 
 // Каталог: быстрый просмотр через Bootstrap modal.

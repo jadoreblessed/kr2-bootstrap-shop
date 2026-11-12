@@ -255,6 +255,26 @@ body {
 .gallery-item figcaption { padding: 1rem 1.2rem; font-weight: 700; }
 .gallery-item figcaption span { display: block; color: #64716a; font-size: .9rem; font-weight: 400; }
 .footer-link { line-height: 1.6; }
+
+/* избранное, корзина, отзывы и личный кабинет */
+.room-nav-tools { max-width: 100%; }
+.room-tool-link { display: inline-flex; align-items: center; gap: .3rem; padding: .42rem .65rem; border: 1px solid var(--room-line); border-radius: 999px; color: var(--room-green-dark); font-size: .82rem; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.room-tool-link:hover, .room-tool-link:focus-visible { color: #fff; background: var(--room-green); border-color: var(--room-green); }
+.plant-card > .room-favorite-button { position: absolute; top: .8rem; right: .8rem; z-index: 2; }
+.room-favorite-button { display: inline-grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--room-line); border-radius: 50%; background: #fff; color: var(--room-green); font-size: 1.5rem; line-height: 1; transition: transform .2s, background .2s; }
+.room-favorite-button:hover { transform: scale(1.08); }
+.room-favorite-button.active { color: #a7354c; background: #fff1f3; }
+.room-review, .room-order, .room-empty { padding: 1.4rem; border: 1px solid var(--room-line); border-radius: 1rem; background: #fafbf8; }
+.room-stars { color: #d6963d; letter-spacing: .12em; font-size: 1.15rem; margin-bottom: .4rem; }
+.room-cart-row { border-bottom: 1px solid var(--room-line); padding: 1rem 0; flex-wrap: wrap; }
+.room-cart-row img { width: 84px; height: 84px; border-radius: .8rem; object-fit: cover; }
+.room-stepper { display: inline-flex; align-items: center; gap: .65rem; border: 1px solid var(--room-line); border-radius: 999px; padding: .2rem .5rem; }
+.room-stepper button { border: 0; background: none; width: 26px; height: 30px; font-size: 1.25rem; color: var(--room-green); }
+.room-empty { padding: 3rem; text-align: center; }
+.room-reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s ease; }
+.room-reveal.is-visible { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .room-reveal { opacity: 1; transform: none; transition: none; } }
+@media (max-width: 575px) { .room-cart-row { align-items: flex-start !important; } .room-cart-row > strong { width: 100%; text-align: right; } .room-empty { padding: 2rem 1rem; } }
 @media (max-width: 1199.98px) {
   .navbar-nav { padding-block: 1rem; }
   .navbar-nav .btn { align-self: flex-start; margin-top: .6rem; }
