@@ -286,3 +286,35 @@ body {
   .detail-photo { height: 155px; }
   .plant-photo { height: 245px; }
 }
+.footer-contact {
+  width: max-content;
+  max-width: 100%;
+  margin-left: auto;
+  text-align: left;
+}
+
+.footer-contact__link,
+.footer-contact__hours {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin-bottom: .45rem;
+}
+
+.footer-contact__icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.footer-contact__hours { color: rgba(255, 255, 255, .65); font-size: .875rem; }
+.footer-contact .btn { margin-top: .65rem; }
+
+@media (max-width: 991.98px) {
+  .footer-contact { margin-left: 0; }
+}
